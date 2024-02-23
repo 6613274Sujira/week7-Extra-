@@ -36,21 +36,27 @@ int main(int argc , char **argv) {
    printf("%d\n",dequeue_struct(&q));
    printf("%d\n",dequeue_struct(&q));*/
 
-   int i,x;
+   int i,x, count;
    
 
  for(i=1;i<argc;i++){
         if(strcmp(argv[i],"x")==0){
+            if (q.size == 0)
+            {
+              printf("the queue is empty\n");
+            }
             x=dequeue_struct(&q);
             // printf("%d, size = %d\n", x, q.size);
-            if(x==0) 
-              printf("Empty queue\n");
-            else
-              printf("dequeing %d\n",x);
+            // if(x==0) 
+              // printf("Empty queue\n");
+            // else
+              // printf("dequeing %d\n",x);
             
         }
         else {
-       enqueue_struct(&q, atoi(argv[i]));
+       enqueue_struct(&q, atoi(argv[i]),atoi(argv[i+1]));
+        i += 1;
+      
            
         }
  }
