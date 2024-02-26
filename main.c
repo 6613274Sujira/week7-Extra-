@@ -56,9 +56,13 @@ int main(int argc , char **argv) {
         else {
        enqueue_struct(&q, atoi(argv[i]),atoi(argv[i+1]));
         i += 1;
+
+        
       
            
         }
+        
  }
+ if(q.size !=0) printf("=================================\nThere are %d ppl left in the queue",q.size);
   return 0;
 }
